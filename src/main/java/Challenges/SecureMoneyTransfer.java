@@ -3,11 +3,13 @@ package Challenges;
 import java.util.Random;
 import java.util.Scanner;
 
-
+// Some of the things is in Hardcoded mode , the focus is the logic only
 
 
 // The Question is
-//Today's Challenge (Level Easy):  Create two distict users A & B(or more as you wish) in a bank with name and balance only, when A wants to send money to B , Bank generates a 5 digit random number to it , So A sends that random number to B instead of direct money , B inserted that number to bank and recieved the corresponding money, Rules to remember : random number must generate on the basis of the user B and amount.
+//Today's Challenge (Level Easy):  Create two distict users A & B(or more as you wish) in a bank with name and balance only,
+// when A wants to send money to B , Bank generates a 5 digit random number to it , So A sends that random number to B instead of direct money ,
+// B inserted that number to bank and recieved the corresponding money, Rules to remember : random number must generate on the basis of the user B and amount.
 //
 //        For example : A wants to send 5,000 to B, he sends request to the Bank (bank ko class bana sakte ho ya method wo aapki marzi ).
 //        then the bank takes the amount and name of the reciever.
@@ -24,7 +26,7 @@ import java.util.Scanner;
 //
 //        Hint : Create seprate class for users and Bank, save the random number then check again for the second user.
 //
-// 😁
+// 😁 Yohohohohoho
 
 
 public class SecureMoneyTransfer {
@@ -34,9 +36,9 @@ public class SecureMoneyTransfer {
         String user1 = "Gullu";
         String user2 = "Ajay";
         String user3 = "Pandit";
-        int money1 = 5000;
-        int money2 = 5000;
-        int money3 = 5000;
+        int money1 = 15000;// mai deposite wala option baad me dalunga abbhi mujhe neend aa rahi hai
+        int money2 = 15000;// mai withdraw wala option bhi baad me dalunga kyuki abhi neend aa rahi hai
+        int money3 = 15000;// The truth is mai ab is code me kush bhi change nahi karunga poora bank banaunga
         int inbox1=0;
         int inbox2=0;
         int inbox3=0;
@@ -56,7 +58,7 @@ public class SecureMoneyTransfer {
                     while(back<6){
                         System.out.println("--------------------------------------------------------------------------------------------------------");
                         System.out.println("What Action do you want to perform with your account :");
-                        System.out.println("1).Send Money\n2).Recieve money\n 3).Check Your Inbox\n 4).Check Balance \n 5). Logout as Gullu" +
+                        System.out.println("1).Send Money\n2).Recieve money\n3).Check Your Inbox\n4).Check Balance \n5).Logout as Gullu" +
                                 "(Press anything greater than 5 to logout)");
                         System.out.print("Your Choice : ");
                         int m = sc.nextInt();sc.nextLine();
@@ -117,7 +119,7 @@ public class SecureMoneyTransfer {
                         System.out.println("--------------------------------------------------------------------------------------------------------");
 
                         System.out.println("What Action do you want to perform with your account :");
-                        System.out.println("1).Send Money\n2).Recieve money\n 3).Check Your Inbox\n 4).Check Balance \n 5). Logout as Gullu" +
+                        System.out.println("1).Send Money\n2).Recieve money\n3).Check Your Inbox\n4).Check Balance \n5).Logout as Gullu" +
                                 "(Press anything greater than 5 to logout)");
                         System.out.print("Your Choice : ");
                         int m = sc.nextInt();sc.nextLine();
@@ -177,7 +179,7 @@ public class SecureMoneyTransfer {
                         System.out.println("--------------------------------------------------------------------------------------------------------");
 
                         System.out.println("What Action do you want to perform with your account :");
-                        System.out.println("1).Send Money\n2).Recieve money\n 3).Check Your Inbox\n 4).Check Balance \n 5). Logout as Gullu" +
+                        System.out.println("1).Send Money\n2).Recieve money\n3).Check Your Inbox\n4).Check Balance \n5).Logout as Gullu" +
                                 "(Press anything greater than 5 to logout)");
                         System.out.print("Your Choice : ");
                         int m = sc.nextInt();sc.nextLine();

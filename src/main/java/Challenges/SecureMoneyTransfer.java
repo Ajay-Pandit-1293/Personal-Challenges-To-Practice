@@ -3,7 +3,8 @@ package Challenges;
 import java.util.Random;
 import java.util.Scanner;
 
-// Thiss is not fully solved yet , i am working on it.
+
+
 
 // The Question is
 //Today's Challenge (Level Easy):  Create two distict users A & B(or more as you wish) in a bank with name and balance only, when A wants to send money to B , Bank generates a 5 digit random number to it , So A sends that random number to B instead of direct money , B inserted that number to bank and recieved the corresponding money, Rules to remember : random number must generate on the basis of the user B and amount.
@@ -27,6 +28,8 @@ import java.util.Scanner;
 
 
 public class SecureMoneyTransfer {
+
+    public static int key =0;
     public static void main(String[] args) {
         String user1 = "Gullu";
         String user2 = "Ajay";
@@ -49,8 +52,9 @@ public class SecureMoneyTransfer {
             switch(n){
                 case 1 -> {
                     System.out.println("You are now user \"Gullu\" ");
-
+                        back=0;
                     while(back<6){
+                        System.out.println("--------------------------------------------------------------------------------------------------------");
                         System.out.println("What Action do you want to perform with your account :");
                         System.out.println("1).Send Money\n2).Recieve money\n 3).Check Your Inbox\n 4).Check Balance \n 5). Logout as Gullu" +
                                 "(Press anything greater than 5 to logout)");
@@ -67,15 +71,39 @@ public class SecureMoneyTransfer {
                                 int c = sc.nextInt();
                                 if (c==1){
                                     inbox2=Bank(amount,user2);
+                                    money1=money1-amount;
+                                    System.out.println("Money send successfully !!! Tell the reciever to check their inbox and use the code " +
+                                            "before it expires to recieve the amount ");
                                 } else if (c==2) {
                                     inbox3=Bank(amount,user3);
+                                    money1=money1-amount;
+                                    System.out.println("Money send successfully !!! Tell the reciever to check their inbox and use the code " +
+                                            "before it expires to recieve the amount ");
                                 }}
 
                             }
                             case 2 ->{
-                                    if (inbox1!=0){
 
-                                    }
+                                System.out.println("Put the Code to recieve money(the generated random number , " +
+                                        "you can it in your inbox)**if you don't have type anything to return");
+                                int g = sc.nextInt();
+                                char firstChar = Character.toUpperCase(user1.charAt(0));
+                                int value = firstChar - 'A' + 1;
+                               if (g==inbox1){
+                                   g=g/value;
+                                   g=g-key;
+                                   money1=money1+g;
+                                   inbox1=0;
+                                   System.out.println("Money recieved successfully !! amount recieved : "+g+" rupees");
+                               }else {
+                                   System.out.println("Galat Code dala hai mere dost , dobara daal !!!");
+                               }
+                            }
+                            case 3 -> {
+                                System.out.println("Your inbox status is : "+inbox1);
+                            }
+                            case 4 ->{
+                                System.out.println("Your current balance is : "+money1);
                             }
 
                             default -> back =m;
@@ -83,9 +111,11 @@ public class SecureMoneyTransfer {
                     }
                 }
                 case 2 ->{
-                    System.out.println("You are now user \"Gullu\" ");
-
+                    System.out.println("You are now user \"Ajay\" ");
+                        back=0;
                     while(back<6){
+                        System.out.println("--------------------------------------------------------------------------------------------------------");
+
                         System.out.println("What Action do you want to perform with your account :");
                         System.out.println("1).Send Money\n2).Recieve money\n 3).Check Your Inbox\n 4).Check Balance \n 5). Logout as Gullu" +
                                 "(Press anything greater than 5 to logout)");
@@ -102,13 +132,38 @@ public class SecureMoneyTransfer {
                                     int c = sc.nextInt();
                                     if (c==1){
                                         inbox1=Bank(amount,user1);
+                                        money2=money2-amount;
+                                        System.out.println("Money send successfully !!! Tell the reciever to check their inbox and use the code " +
+                                                "before it expires to recieve the amount ");
                                     } else if (c==2) {
                                         inbox3=Bank(amount,user3);
+                                        money2=money2-amount;
+                                        System.out.println("Money send successfully !!! Tell the reciever to check their inbox and use the code " +
+                                                "before it expires to recieve the amount ");
                                     }}
 
                             }
                             case 2 ->{
-
+                                System.out.println("Put the Code to recieve money(the generated random number , " +
+                                        "you can it in your inbox)**if you don't have type anything to return");
+                                int g = sc.nextInt();
+                                char firstChar = Character.toUpperCase(user2.charAt(0));
+                                int value = firstChar - 'A' + 1;
+                                if (g==inbox2){
+                                    g=g/value;
+                                    g=g-key;
+                                    money2=money2+g;
+                                    inbox2=0;
+                                    System.out.println("Money recieved successfully !! amount recieved : "+g+" rupees");
+                                }else {
+                                    System.out.println("Galat Code dala hai mere dost , dobara daal !!!");
+                                }
+                            }
+                            case 3 -> {
+                                System.out.println("Your inbox status is : "+inbox2);
+                            }
+                            case 4 ->{
+                                System.out.println("Your current balance is : "+money2);
                             }
 
                             default -> back =m;
@@ -116,9 +171,11 @@ public class SecureMoneyTransfer {
                     }
                 }
                 case 3 ->{
-                    System.out.println("You are now user \"Gullu\" ");
-
+                    System.out.println("You are now user \"Pandit\" ");
+                    back=0;
                     while(back<6){
+                        System.out.println("--------------------------------------------------------------------------------------------------------");
+
                         System.out.println("What Action do you want to perform with your account :");
                         System.out.println("1).Send Money\n2).Recieve money\n 3).Check Your Inbox\n 4).Check Balance \n 5). Logout as Gullu" +
                                 "(Press anything greater than 5 to logout)");
@@ -135,13 +192,38 @@ public class SecureMoneyTransfer {
                                     int c = sc.nextInt();
                                     if (c==1){
                                         inbox1=Bank(amount,user1);
+                                        money3=money3-amount;
+                                        System.out.println("Money send successfully !!! Tell the reciever to check their inbox and use the code " +
+                                                "before it expires to recieve the amount ");
                                     } else if (c==2) {
                                         inbox2=Bank(amount,user2);
+                                        money3=money3-amount;
+                                        System.out.println("Money send successfully !!! Tell the reciever to check their inbox and use the code " +
+                                                "before it expires to recieve the amount ");
                                     }}
 
                             }
                             case 2 ->{
-
+                                System.out.println("Put the Code to recieve money(the generated random number , " +
+                                        "you can it in your inbox)**if you don't have type anything to return");
+                                int g = sc.nextInt();
+                                char firstChar = Character.toUpperCase(user3.charAt(0));
+                                int value = firstChar - 'A' + 1;
+                                if (g==inbox3){
+                                    g=g/value;
+                                    g=g-key;
+                                    money3=money3+g;
+                                    inbox3=0;
+                                    System.out.println("Money recieved successfully !! amount recieved : "+g+" rupees");
+                                }else {
+                                    System.out.println("Galat Code dala hai mere dost , dobara daal !!!");
+                                }
+                            }
+                            case 3 -> {
+                                System.out.println("Your inbox status is : "+inbox3);
+                            }
+                            case 4 ->{
+                                System.out.println("Your current balance is : "+money3);
                             }
 
                             default -> back =m;
@@ -158,9 +240,12 @@ public class SecureMoneyTransfer {
     public static int Bank (int amount , String user ){
         Random random = new Random();
         int num = 10000+random.nextInt(90000);
+        key =num;
         char firstChar = Character.toUpperCase(user.charAt(0));
         int value = firstChar - 'A' + 1;
         int result = (num+amount)*value;
         return result;
     }
+
+
 }

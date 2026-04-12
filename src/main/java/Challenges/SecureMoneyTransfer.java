@@ -3,7 +3,7 @@ package Challenges;
 import java.util.Random;
 import java.util.Scanner;
 
-
+// Thiss is not fully solved yet , i am working on it.
 
 // The Question is
 //Today's Challenge (Level Easy):  Create two distict users A & B(or more as you wish) in a bank with name and balance only, when A wants to send money to B , Bank generates a 5 digit random number to it , So A sends that random number to B instead of direct money , B inserted that number to bank and recieved the corresponding money, Rules to remember : random number must generate on the basis of the user B and amount.

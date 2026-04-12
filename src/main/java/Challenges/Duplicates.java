@@ -5,8 +5,10 @@ import java.util.Scanner;
 
 // this is not fully solved yet , it has some big bugs so i'll solve it later
 
-
+// Question
 // TO check the duplicates without the looops in an array , not even internally or in prebuilt functions;
+
+
 public class Duplicates {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

@@ -13,6 +13,13 @@ package Challenges;
 // deduct the salary from the array , (its when you face decimal places that can exceed the budget
 // or reduce the budget then add or duduct the salary only first index salary to make it balance
 //  the budget is fixed and can't change )
+
+// For Example :
+// the array is [12000.00,15000.00,120000.00,18000.00,5000.00,30000.00] of salary (Total Sum = 2,00,000 ** 2 lakh)
+//So now we have to promote the 4th index employee by 25000.00
+// Now the output array will look like
+// [7000.00,10000.00,115000.00,13000.00,30000.00,25000.00].(Total Sum = 2,00,000 ** 2 lakh)
+// .
 public class SalaryUnderBudget {
     public static void main(String[] args) {
 

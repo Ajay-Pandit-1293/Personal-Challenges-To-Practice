@@ -14,6 +14,8 @@ package Challenges;
 // or reduce the budget then add or duduct the salary only first index salary to make it balance
 //  the budget is fixed and can't change )
 
+import java.util.Arrays;
+
 // For Example :
 // the array is [12000.00,15000.00,120000.00,18000.00,5000.00,30000.00] of salary (Total Sum = 2,00,000 ** 2 lakh)
 //So now we have to promote the 4th index employee by 25000.00
@@ -21,7 +23,80 @@ package Challenges;
 // [7000.00,10000.00,115000.00,13000.00,30000.00,25000.00].(Total Sum = 2,00,000 ** 2 lakh)
 // .
 public class SalaryUnderBudget {
-    public static void main(String[] args) {
+    public static double[] promoteSalary(double[] salary, int empIndex, double raiseAmount) {
+        int n = salary.length;
 
+
+        salary[empIndex] += raiseAmount;
+
+
+        double deductPerPerson = raiseAmount / (n - 1);
+        double floorDeduct = Math.floor(deductPerPerson * 100) / 100; // 2 decimal places
+        double totalDeducted = 0;
+
+
+        for (int i = 0; i < n; i++) {
+            if (i != empIndex) {
+                salary[i] -= floorDeduct;
+                totalDeducted += floorDeduct;
+            }
+        }
+
+
+        double remainder = raiseAmount - totalDeducted;
+        remainder = Math.round(remainder * 100.0) / 100.0;
+
+        if (remainder != 0 && 0 != empIndex) {
+            salary[0] -= remainder;
+        } else if (remainder != 0) {
+            salary[1] -= remainder;
+        }
+
+        return salary;
+    }
+
+    public static double[] demoteSalary(double[] salary, int empIndex, double deductAmount) {
+        int n = salary.length;
+
+
+        salary[empIndex] -= deductAmount;
+
+
+        double raisePerPerson = deductAmount / (n - 1);
+        double floorRaise = Math.floor(raisePerPerson * 100) / 100;
+        double totalRaised = 0;
+
+
+        for (int i = 0; i < n; i++) {
+            if (i != empIndex) {
+                salary[i] += floorRaise;
+                totalRaised += floorRaise;
+            }
+        }
+
+
+        double remainder = deductAmount - totalRaised;
+        remainder = Math.round(remainder * 100.0) / 100.0;
+
+        if (remainder != 0 && 0 != empIndex) {
+            salary[0] += remainder;
+        } else if (remainder != 0) {
+            salary[1] += remainder;
+        }
+
+        return salary;
+    }
+
+    public static void main(String[] args) {
+        double[] salary = {12000.00, 15000.00, 120000.00, 18000.00, 5000.00, 30000.00};
+
+        System.out.println("Original: " + Arrays.toString(salary));
+        System.out.printf("Total: %.2f%n%n", Arrays.stream(salary).sum());
+
+
+        salary = promoteSalary(salary, 4, 25000.00);
+
+        System.out.println("After Promotion: " + Arrays.toString(salary));
+        System.out.printf("Total: %.2f%n", Arrays.stream(salary).sum());
     }
 }

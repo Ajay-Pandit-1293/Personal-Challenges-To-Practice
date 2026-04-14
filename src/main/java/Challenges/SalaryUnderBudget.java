@@ -88,6 +88,9 @@ public class SalaryUnderBudget {
     }
 
     public static void main(String[] args) {
+
+
+        // The input is hardcoded just focus on logic cause i can change the input by using scanner class
         double[] salary = {12000.00, 15000.00, 120000.00, 18000.00, 5000.00, 30000.00};
 
         System.out.println("Original: " + Arrays.toString(salary));
